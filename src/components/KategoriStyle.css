@@ -1,0 +1,126 @@
+/* File: src/components/CategoryStyle.css */
+
+/* Styling Umum */
+:root {
+    --color-primary-blue: #0d47a1; 
+    --color-text-dark: #333333;
+    --color-white: #ffffff;
+    --color-light-gray: #f4f4f9;
+}
+
+.category-page {
+    background-color: var(--color-light-gray);
+    min-height: calc(100vh - 100px); 
+}
+
+/* Menggunakan spacer yang sama dari Beranda.css */
+.spacer { height: 100px; } 
+.spacer-bottom { height: 40px; } 
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.category-header {
+    padding: 40px 0 30px;
+    text-align: center;
+}
+
+.category-header h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary-blue);
+    font-weight: 800;
+}
+
+.category-header .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Grid Kategori */
+.category-grid {
+    display: grid;
+    /* Membuat grid yang responsif: minimal 250px per kolom */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+/* Card Kategori (category-card-item) */
+.category-card-item {
+    height: 180px;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end; /* Posisikan teks di bawah */
+    text-decoration: none;
+    color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden; 
+}
+
+.category-card-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay Gelap untuk Kontras Teks */
+.category-card-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Gradient: lebih gelap di bawah untuk teks */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2; /* Pastikan di atas overlay */
+}
+
+.card-content p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+    margin: 0;
+}
+
+/* Custom Background Images for each category (Placeholders) */
+/* Catatan: Anda perlu menyediakan gambar dengan nama file ini */
+.bg-fantasi { background-image: url('../assets/kategori-fantasi.jpg'); }
+.bg-romantis { background-image: url('../assets/kategori-romantis.jpg'); }
+.bg-aksi { background-image: url('../assets/kategori-aksi.jpg'); }
+.bg-sejarah { background-image: url('../assets/kategori-sejarah.jpg'); }
+.bg-misteri { background-image: url('../assets/kategori-misteri.jpg'); }
+.bg-sains { background-image: url('../assets/kategori-sains.jpg'); }
+.bg-agama { background-image: url('../assets/kategori-agama.jpg'); }
+.bg-bisnis { background-image: url('../assets/kategori-bisnis.jpg'); }
+.bg-kesehatan { background-image: url('../assets/kategori-kesehatan.jpg'); }
+.bg-pendidikan { background-image: url('../assets/kategori-pendidikan.jpg'); }
+
+/* Responsiveness */
+@media screen and (max-width: 600px) {
+    .category-grid {
+        grid-template-columns: 1fr; 
+    }
+    .category-card-item {
+        height: 150px;
+    }
+    .category-header h1 {
+        font-size: 2rem;
+    }
+}

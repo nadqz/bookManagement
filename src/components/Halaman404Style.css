@@ -1,0 +1,81 @@
+:root {
+    --color-primary-blue: #0d47a1;
+    --color-secondary-blue: #1e88e5;
+    --color-white: #ffffff;
+    --color-warning: #ffc107;
+    --color-text-dark: #333333;
+    --color-background-soft: #f4f7f9;
+}
+
+.notfound-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    min-height: calc(100vh - 250px); /* Memastikan 404 mengisi sisa layar */
+    background-color: var(--color-background-soft);
+}
+
+.error-box {
+    background-color: var(--color-white);
+    padding: 60px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.error-icon {
+    font-size: 4rem;
+    color: var(--color-warning);
+    margin-bottom: 20px;
+}
+
+.error-box h1 {
+    font-size: 5rem;
+    color: var(--color-primary-blue);
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.error-box h2 {
+    font-size: 1.8rem;
+    color: var(--color-text-dark);
+    margin-bottom: 20px;
+}
+
+.error-box p {
+    color: var(--color-text-light);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.home-btn {
+    background-color: var(--color-secondary-blue);
+    color: var(--color-white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.home-btn:hover {
+    background-color: var(--color-primary-blue);
+}
+
+@media (max-width: 500px) {
+    .error-box {
+        padding: 40px 20px;
+    }
+    .error-box h1 {
+        font-size: 4rem;
+    }
+}

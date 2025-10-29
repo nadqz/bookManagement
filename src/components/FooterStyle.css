@@ -1,0 +1,151 @@
+/* --- Footer Colors --- */
+:root {
+    --color-primary-blue: #0d47a1; /* Biru tua untuk latar */
+    --color-text-light: #ffffff; /* Teks terang */
+    --color-link-hover: #cccccc; /* Link hover putih */
+    --color-icon: #cccccc; /* Warna ikon sosial media */
+}
+
+.footer {
+    width: 100%;
+    background-color: var(--color-primary-blue);
+    padding: 60px 0 0; /* Padding atas lebih besar, bawah 0 */
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+.container-footer {
+    max-width: 1240px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.col-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr; /* 3 kolom kecil + 1 kolom subscribe besar */
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #3d6797; /* Garis pemisah abu-abu */
+}
+
+/* Kolom Menu */
+.col h6 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.col ul {
+    list-style: none;
+}
+
+.col li {
+    line-height: 2;
+}
+
+.link {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: var(--color-link-hover);
+}
+
+/* Kolom Subscribe */
+.col-subscribe h6 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.col-subscribe p {
+    margin-bottom: 20px;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 10px;
+}
+
+.subscribe-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.subscribe-form button {
+    background-color: #f7931e; /* Warna oranye/aksen */
+    color: var(--color-white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.subscribe-form button:hover {
+    background-color: #d17c18;
+}
+
+/* --- Footer Bottom (Hak Cipta & Sosial Media) --- */
+.footer-bottom {
+    padding: 20px 0;
+}
+
+.content-bottom {
+    max-width: 1240px;
+    margin: auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social .icon {
+    color: var(--color-icon);
+    margin-right: 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.social .icon:hover {
+    color: var(--color-text-light);
+}
+
+/* --- Responsiveness --- */
+@media screen and (max-width: 900px) {
+    .col-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+    }
+    .col-subscribe {
+        grid-column: span 2; /* Kolom subscribe mengambil 2 kolom di tablet */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .col-grid {
+        grid-template-columns: 1fr; /* 1 kolom di mobile */
+        text-align: center;
+    }
+    .col-subscribe {
+        grid-column: span 1;
+    }
+    .subscribe-form {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    .content-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .social {
+        padding-top: 10px;
+    }
+}

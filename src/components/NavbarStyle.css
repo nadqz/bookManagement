@@ -1,0 +1,139 @@
+/* Styling umum dan reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Opsional: Tentukan font dasar */
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Variabel Warna --- */
+:root {
+    --color-primary-blue: #0d47a1; /* Biru tua untuk logo & hover */
+    --color-text-dark: #333333; /* Warna hitam gelap untuk teks menu */
+    --color-white: #ffffff;
+}
+
+/* --- Header/Nav Container --- */
+header {
+    background-color: var(--color-white); /* Ganti dari darkgrey */
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* --- Penyesuaian Sticky Navbar --- */
+    position: fixed; /* Membuat navbar diam saat di-scroll */
+    top: 0;          /* Memastikan navbar berada di paling atas */
+    left: 0;
+    z-index: 1000;   /* Penting: Memastikan navbar berada di atas konten lain */
+}
+
+.navbar {
+    max-width: 1240px;
+    margin: auto;
+    padding: 0 1.5rem; /* Tambah padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* --- Logo Styling (Gambar + Teks) --- */
+.logo-link {
+    display: flex; /* Mengatur item (img dan h2) dalam satu baris */
+    align-items: center; /* Rata tengah vertikal */
+    text-decoration: none;
+}
+
+.logo-img {
+    height: auto;
+    width: 80px; /* Ukuran gambar logo dibuat lebih kecil */
+    margin-right: 12px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--color-primary-blue); /* Teks logo berwarna biru */
+}
+
+.logo-text {
+    font-size: 1.8rem; /* Ukuran dibuat lebih besar */
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--color-primary-blue); /* Pastikan warna teks logo biru */
+    margin: 0;
+}
+
+/* --- Menu Navigasi --- */
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: var(--color-text-dark); /* Teks menu berwarna hitam */
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--color-primary-blue); /* Saat di-hover, menjadi biru */
+}
+
+/* --- Hamburger (Hanya Tampil di Mobile) --- */
+.hamburger {
+    display: none; 
+    cursor: pointer;
+    color: var(--color-text-dark); /* Hamburger ikon berwarna hitam di desktop */
+}
+
+/* RESPONSIVENESS (Untuk Layar Kecil) */
+@media screen and (max-width: 768px) {
+    /* Pastikan warna ikon hamburger di mobile tetap terlihat */
+    .hamburger {
+        display: block;
+        z-index: 200; /* Pastikan di atas menu yang terbuka */
+    }
+
+    /* Menu saat terbuka di mobile */
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        position: fixed; /* Ubah absolute menjadi fixed untuk memastikan menutupi seluruh layar */
+        top: 0; /* Mulai dari atas */
+        left: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+        background-color: var(--color-primary-blue); /* Latar belakang menu mobile biru */
+        z-index: 100;
+        padding-top: 60px; /* Jarak dari atas (tempat navbar) */
+    }
+
+    .nav-menu.active {
+        left: 0;
+        opacity: 1;
+    }
+
+    /* Teks dan Link di Menu Mobile */
+    .nav-link {
+        color: var(--color-white); /* Teks link di mobile menjadi putih agar kontras dengan latar belakang biru */
+        padding: 1rem;
+        width: 100%;
+        display: block;
+        font-size: 1.8rem; /* Ukuran font lebih besar di mobile */
+    }
+
+    .nav-link:hover {
+        color: #e0e0e0; /* Warna hover lebih terang */
+    }
+}
